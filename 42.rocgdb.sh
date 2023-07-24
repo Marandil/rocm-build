@@ -8,7 +8,6 @@ echo "|====|"
 
 mkdir -p $ROCM_BUILD_DIR/rocgdb
 cd $ROCM_BUILD_DIR/rocgdb
-pushd .
 
 START_TIME=`date +%s`
 
@@ -23,5 +22,4 @@ END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
 echo "elapse : "$EXECUTING_TIME"s"
 
-popd
 

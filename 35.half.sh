@@ -4,7 +4,6 @@ set -e
 
 mkdir -p $ROCM_BUILD_DIR/half
 cd $ROCM_BUILD_DIR/half
-pushd .
 
 START_TIME=`date +%s`
 
@@ -18,11 +17,8 @@ START_TIME=`date +%s`
 
 cmake $ROCM_GIT_DIR/half
 cmake --build . --target package
-sudo dpkg -i *.deb
+$RUN_DPKG -i *.deb
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
 echo "elapse : "$EXECUTING_TIME"s"
-
-popd
-

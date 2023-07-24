@@ -2,7 +2,6 @@
 
 set -ex
 
-pushd .
 
 cd $ROCM_GIT_DIR/HIP
 git reset --hard
@@ -34,5 +33,4 @@ git reset --hard
 git apply $ROCM_PATCH_DIR/73.rocmvalidationsuite-ubuntu2204-1.patch
 cd $ROCM_BUILD_DIR/..
 
-popd
 

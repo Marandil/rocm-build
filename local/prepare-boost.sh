@@ -2,7 +2,6 @@
 
 set -e
 
-pushd .
 
 scp work@192.168.31.185:/media/work/hgst1/backup-1000/ai/boost_1_72_0.tar.bz2 /home/work/local
 scp work@192.168.31.185:/media/work/hgst1/backup-1000/ai/boost.cmake /home/work/local
@@ -20,5 +19,4 @@ make -j
 
 sudo make install
 
-popd
 

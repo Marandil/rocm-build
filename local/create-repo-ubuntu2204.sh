@@ -4,7 +4,6 @@ set -ex
 
 mkdir -p build/rocm-ubuntu2204
 cd build/rocm-ubuntu2204
-pushd .
 
 mkdir -p dists/jammy/main/binary-amd64
 mkdir -p pool/main/{c,h,m,r}
@@ -132,5 +131,4 @@ apt-ftparchive release . > Release
 
 # gpg --clearsign -o InRelease Release
 
-popd
 

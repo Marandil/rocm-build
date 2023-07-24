@@ -2,7 +2,6 @@
 
 set -x
 
-pushd .
 
 source env.sh
 
@@ -96,5 +95,4 @@ bash 74.rocr_debug_agent.sh
 
 bash 75.hipify.sh
 
-popd
 

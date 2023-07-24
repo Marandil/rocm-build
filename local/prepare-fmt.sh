@@ -2,7 +2,6 @@
 
 set -e
 
-pushd .
 
 scp work@192.168.31.185:/media/work/hgst1/backup-1000/gitrepo/fmt-7.1.3.tar.gz /home/work/local
 
@@ -17,5 +16,4 @@ make -j
 
 sudo make install
 
-popd
 

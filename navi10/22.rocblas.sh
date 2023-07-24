@@ -2,15 +2,10 @@
 
 set -e
 
-echo "|====|"
-echo "|SLOW|"
-echo "|====|"
-
 #bash $ROCM_GIT_DIR/rocBLAS/install.sh -d
 
 mkdir -p $ROCM_BUILD_DIR/rocblas
 cd $ROCM_BUILD_DIR/rocblas
-pushd .
 
 cd $ROCM_GIT_DIR/Tensile
 git reset --hard
@@ -40,11 +35,10 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     $ROCM_GIT_DIR/rocBLAS
 ninja
 ninja package
-sudo dpkg -i *.deb
+$RUN_DPKG -i *.deb
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
 echo "elapse : "$EXECUTING_TIME"s"
 
-popd
 
